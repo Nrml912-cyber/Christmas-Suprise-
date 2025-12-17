@@ -1,40 +1,193 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merry Christmas Neha ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:#fff;overflow:hidden;
-}/* Password Screen */ #lock{ position:fixed;top:0;left:0;width:100%;height:100vh; display:flex;justify-content:center;align-items:center; flex-direction:column;text-align:center; background:linear-gradient(135deg,#000428,#004e92); z-index:9999; } #lock input{ padding:12px 18px;border-radius:25px;border:none; margin-top:15px;font-size:16px;text-align:center; } #lock button{ margin-top:15px;padding:10px 26px; border:none;border-radius:25px; background:#ff4d6d;color:#fff;font-size:16px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merry Christmas Neha ❤️</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
 
-.slide{ position:absolute;top:0;left:0;width:100%;height:100vh; display:flex;justify-content:center;align-items:center; flex-direction:column;text-align:center;padding:25px; opacity:0;transform:scale(.95);transition:1s; } .slide.active{opacity:1;transform:scale(1);}
+    body{
+      background: radial-gradient(circle at top, #ff758c, #ff7eb3, #1d2671);
+      color:white;
+      overflow:hidden;
+    }
 
-h1{font-size:2.6rem;margin-bottom:15px;} .love{font-family:'Great Vibes',cursive;font-size:3.2rem;color:#ffb3c6;} p{font-size:1.1rem;max-width:760px;line-height:1.7;}
+    /* PASSWORD SCREEN */
+    #lockScreen{
+      position:fixed;
+      inset:0;
+      background:linear-gradient(135deg,#141e30,#243b55);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      text-align:center;
+      padding:20px;
+    }
 
-img{width:260px;height:260px;object-fit:cover;border-radius:22px;margin:10px;box-shadow:0 15px 35px rgba(0,0,0,.4);}
+    #lockScreen h1{
+      font-family:'Great Vibes',cursive;
+      font-size:48px;
+      margin-bottom:10px;
+    }
 
-.controls{position:fixed;top:15px;right:15px;z-index:10;} .controls button{background:#ff4d6d;border:none;color:white;padding:10px 16px;border-radius:30px;margin-left:8px;cursor:pointer;}
+    #lockScreen input{
+      padding:12px;
+      border-radius:10px;
+      border:none;
+      font-size:16px;
+      margin-top:15px;
+      text-align:center;
+    }
 
-.nav{position:fixed;bottom:20px;right:20px;z-index:10;} .nav button{background:#ffffff22;border:1px solid #fff;color:white;padding:12px 18px;border-radius:50%;font-size:18px;cursor:pointer;}
+    #lockScreen button{
+      margin-top:15px;
+      padding:10px 30px;
+      border:none;
+      border-radius:25px;
+      background:#ff4d6d;
+      color:white;
+      font-size:16px;
+    }
 
-.snowflake{position:fixed;top:-10px;color:white;animation:fall linear infinite;} @keyframes fall{to{transform:translateY(110vh);}} </style>
+    /* MUSIC CONTROLS */
+    .music{
+      position:fixed;
+      top:15px;
+      right:15px;
+      z-index:1000;
+    }
 
-</head>
-<body><!-- PASSWORD LOCK --><div id="lock">
-  <h1 class="love">For Neha ❤️</h1>
-  <p>Enter the secret word to unlock my heart</p>
-  <input type="password" id="pass" placeholder="Password">
-  <button onclick="unlock()">Unlock 🔓</button>
-</div><audio id="music" src="love-song.mp3"></audio>
+    .music button{
+      background:rgba(255,255,255,0.2);
+      border:none;
+      padding:10px 15px;
+      border-radius:20px;
+      color:white;
+      margin-left:5px;
+    }
 
-<div class="controls" style="display:none" id="controls">
+    /* SLIDES */
+    .slide{
+      min-height:100vh;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:30px;
+      animation:fade 1s ease;
+    }
+
+    .slide.active{
+      display:flex;
+    }
+
+    h2{
+      font-family:'Great Vibes',cursive;
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    p{
+      font-size:16px;
+      line-height:1.8;
+      max-width:700px;
+    }
+
+    img{
+      width:220px;
+      border-radius:20px;
+      margin:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .next{
+      margin-top:25px;
+      padding:10px 30px;
+      border:none;
+      border-radius:25px;
+      background:#ffffff;
+      color:#ff4d6d;
+      font-size:16px;
+    }
+
+    @keyframes fade{
+      from{opacity:0;transform:scale(0.95)}
+      to{opacity:1;transform:scale(1)}
+    }
+  </style></head>
+<body><!-- PASSWORD LOCK --><div id="lockScreen">
+  <h1>For Neha ❤️</h1>
+  <p>Enter the secret password to open your Christmas surprise 🎄</p>
+  <input type="password" id="passwordInput" placeholder="Password" />
+  <button onclick="checkPassword()">Open 💖</button>
+  <p id="error" style="margin-top:10px;color:#ffb3b3"></p>
+</div><!-- MUSIC --><div class="music">
   <button onclick="playMusic()">▶ Play</button>
   <button onclick="pauseMusic()">⏸ Pause</button>
-</div><div class="slide active">
+</div>
+<audio id="song" src="love-song.mp3" loop></audio><!-- SLIDE 1 --><section class="slide active">
+  <h2>Merry Christmas Neha 🎄</h2>
+  <p>
+    Distance may keep us apart, but my heart finds its way to you every single moment.
+    This little website is not just code — it’s my emotions, my love, and my promise,
+    wrapped only for you.
+  </p>
+  <button class="next" onclick="nextSlide()">Next ➜</button>
+</section><!-- SLIDE 2 --><section class="slide">
+  <h2>For My Love ❤️</h2>
+  <p>
+    Neha, tum meri zindagi ka wo hissa ho jahan har kahani khud-ba-khud khoobsurat ban jaati hai.
+    Tumhari ek muskurahat mere saare gham chura leti hai, aur tumhari khamoshi bhi mujhe sukoon de jaati hai.
+    Agar poori duniya bhi mujhse chhin jaaye, par tum saath raho — toh mujhe kuch aur chahiye hi nahi.
+  </p>
+  <button class="next" onclick="nextSlide()">Next ➜</button>
+</section><!-- SLIDE 3 --><section class="slide">
+  <h2>Forever Us 💫</h2>
+  <p>
+    I don’t promise you a perfect life, but I promise you a loyal heart.
+    Through every distance, every silence, every storm — I will always choose you.
+    You are my today, my tomorrow, and every Christmas yet to come.
+  </p>
+  <img src="photo1.jpg" />
+  <img src="photo2.jpg" />
+  <button class="next" onclick="nextSlide()">Finish ❤️</button>
+</section><script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function nextSlide(){
+    slides[current].classList.remove('active');
+    current++;
+    if(current < slides.length){
+      slides[current].classList.add('active');
+    }
+  }
+
+  function checkPassword(){
+    const p = document.getElementById('passwordInput').value;
+    if(p === 'NEHA25'){
+      document.getElementById('lockScreen').style.display = 'none';
+    } else {
+      document.getElementById('error').innerText = 'Wrong password 💔';
+    }
+  }
+
+  function playMusic(){
+    document.getElementById('song').play();
+  }
+
+  function pauseMusic(){
+    document.getElementById('song').pause();
+  }
+</script></body>
+</html></div><div class="slide active">
   <h1 class="love">Hey Neha ❤️</h1>
   <p>Distance may keep us apart, but love never learned how to stay away.</p>
 </div><div class="slide">
