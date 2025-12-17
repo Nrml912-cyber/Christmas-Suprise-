@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Merry Christmas Neha ❤️</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Neha ❤️</title>  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
     *{
       margin:0;
       padding:0;
@@ -11,12 +11,12 @@
     }
 
     body{
-      background: radial-gradient(circle at top, #ff758c, #ff7eb3, #1d2671);
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#a18cd1);
       color:white;
       overflow:hidden;
     }
 
-    /* PASSWORD SCREEN */
+    /* LOCK SCREEN */
     #lockScreen{
       position:fixed;
       inset:0;
@@ -25,219 +25,219 @@
       flex-direction:column;
       justify-content:center;
       align-items:center;
-      z-index:9999;
+      z-index:10;
       text-align:center;
       padding:20px;
     }
 
     #lockScreen h1{
       font-family:'Great Vibes',cursive;
-      font-size:48px;
+      font-size:46px;
       margin-bottom:10px;
     }
 
     #lockScreen input{
       padding:12px;
-      border-radius:10px;
+      width:220px;
+      border-radius:12px;
       border:none;
       font-size:16px;
-      margin-top:15px;
       text-align:center;
+      margin-top:15px;
     }
 
     #lockScreen button{
       margin-top:15px;
-      padding:10px 30px;
+      padding:10px 35px;
       border:none;
-      border-radius:25px;
+      border-radius:30px;
       background:#ff4d6d;
       color:white;
       font-size:16px;
     }
 
-    /* MUSIC CONTROLS */
-    .music{
-      position:fixed;
-      top:15px;
-      right:15px;
-      z-index:1000;
-    }
-
-    .music button{
-      background:rgba(255,255,255,0.2);
-      border:none;
-      padding:10px 15px;
-      border-radius:20px;
-      color:white;
-      margin-left:5px;
-    }
-
     /* SLIDES */
     .slide{
-      min-height:100vh;
-      display:none;
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
       justify-content:center;
       align-items:center;
-      flex-direction:column;
       text-align:center;
-      padding:30px;
-      animation:fade 1s ease;
+      padding:25px;
+      opacity:0;
+      transition:opacity 1.2s ease;
     }
 
     .slide.active{
-      display:flex;
+      opacity:1;
     }
 
     h2{
       font-family:'Great Vibes',cursive;
       font-size:42px;
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     p{
-      font-size:16px;
-      line-height:1.8;
       max-width:700px;
-    }
-
-    img{
-      width:220px;
-      border-radius:20px;
-      margin:10px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    .next{
-      margin-top:25px;
-      padding:10px 30px;
-      border:none;
-      border-radius:25px;
-      background:#ffffff;
-      color:#ff4d6d;
+      line-height:1.8;
       font-size:16px;
     }
 
-    @keyframes fade{
-      from{opacity:0;transform:scale(0.95)}
-      to{opacity:1;transform:scale(1)}
+    .photos{
+      display:flex;
+      gap:15px;
+      margin-top:20px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .photos img{
+      width:170px;
+      height:220px;
+      object-fit:cover;
+      border-radius:16px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    /* FINAL TEXT */
+    #typeText{
+      font-family:'Great Vibes',cursive;
+      font-size:46px;
+      margin-top:20px;
+      text-align:center;
+      max-width:90%;
+      line-height:1.4;
+      white-space:normal;
+      overflow:hidden;
+      animation:fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:scale(0.95)}
+      to{opacity:1; transform:scale(1)}
+    }
+
+    @keyframes blink{
+      50%{border-color:transparent}
+    }
+  
+    /* SNOWFALL */
+    canvas#snow{
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      pointer-events:none;
+      z-index:1;
     }
   </style></head>
-<body><!-- PASSWORD LOCK --><div id="lockScreen">
+<body>
+<canvas id="snow"></canvas><!-- PASSWORD --><div id="lockScreen">
   <h1>For Neha ❤️</h1>
-  <p>Enter the secret password to open your Christmas surprise 🎄</p>
-  <input type="password" id="passwordInput" placeholder="Password" />
+  <p>Enter the secret password</p>
+  <input id="passwordInput" type="password" placeholder="Password">
   <button onclick="checkPassword()">Open 💖</button>
   <p id="error" style="margin-top:10px;color:#ffb3b3"></p>
-</div><!-- MUSIC --><div class="music">
-  <button onclick="playMusic()">▶ Play</button>
-  <button onclick="pauseMusic()">⏸ Pause</button>
-</div>
-<audio id="song" src="love-song.mp3" loop></audio><!-- SLIDE 1 --><section class="slide active">
-  <h2>Merry Christmas Neha 🎄</h2>
+</div><!-- SLIDE 1 --><section class="slide active">
+  <h2>Merry Christmas Baby 🎄</h2>
   <p>
-    Distance may keep us apart, but my heart finds its way to you every single moment.
-    This little website is not just code — it’s my emotions, my love, and my promise,
-    wrapped only for you.
+    Distance may keep us apart, but my heart celebrates Christmas with you every moment.
+    This little surprise carries all my feelings, only for you.
   </p>
-  <button class="next" onclick="nextSlide()">Next ➜</button>
-</section><!-- SLIDE 2 --><section class="slide">
-  <h2>Meri Shayari, Sirf Tumhare Liye ❤️</h2>
-  <p>
-    Neha, tum meri zindagi ka wo ehsaas ho jise lafzon me poora bayan karna mumkin hi nahi.
-    Tumhari ek muskurahat meri har thakaan mita deti hai, tumhari awaaz mere dil ko sukoon de jaati hai.
-    Door hoke bhi tum mere sabse kareeb ho, kyunki mera har khayal, har dua, har khwab tum se hi shuru hota hai.
-    Agar kabhi main kam bol paata hoon, toh yaad rakhna meri khamoshi me bhi sirf tum hi basi hoti ho.
-    Tum meri aadat nahi, meri zarurat ho… meri kahani ka sabse khoobsurat hissa ho.
-    Is Christmas par bas itna kehna hai — chahe duniya badal jaaye, par main tumhe kabhi nahi badalne dunga.
-  </p>
-  <button class="next" onclick="nextSlide()">Next ➜</button>
-</section><!-- SLIDE 3 --><section class="slide">
-  <h2>Merry Christmas My Love 🎄</h2>
-  <p>
-    Merry Christmas Neha ❤️
-    On this beautiful Christmas, I want you to know that you are the warmest miracle of my life.
-    Every moment with you feels like a blessing, every thought of you feels like home.
-    Distance may separate our hands, but our hearts beat in the same rhythm, dreaming of the same forever.
-    I don’t promise you a perfect world, but I promise you a heart that will always choose you,
-    in every season, every silence, every Christmas yet to come.
-    Thank you for being my love, my strength, my smile.
-    Merry Christmas, today and always.
-  </p>
-  <img src="photo1.jpg" />
-  <img src="photo2.jpg" />
-  <button class="next" onclick="nextSlide()">Finish ❤️</button>
-</section><section class="slide">
-  <h2>Forever Us 💫</h2>
-  <p>
-    I don’t promise you a perfect life, but I promise you a loyal heart.
-    Through every distance, every silence, every storm — I will always choose you.
-    You are my today, my tomorrow, and every Christmas yet to come.
-  </p>
-  <img src="photo1.jpg" />
-  <img src="photo2.jpg" />
-  <button class="next" onclick="nextSlide()">Finish ❤️</button>
 </section>
-<script>
-  // PASSWORD
-  function checkPassword(){
-    const p = document.getElementById("passwordInput").value;
-    if(p === "NEHA25"){
-      document.getElementById("lockScreen").style.display = "none";
-      startAutoPlay();
-    } else {
-      document.getElementById("error").innerText = "Wrong password 💔";
-    }
-  }
+<!-- SLIDE 2 -->
+<section class="slide">
+  <h2>Shayari From My Heart baby ❤️</h2>
+  <p>
+    Neha, tum meri zindagi ka wo ehsaas ho jo har din mujhe thoda aur zinda kar deta hai.
+    Tumhari ek muskurahat mere saare dard bhula deti hai, aur tumhari baaton me wo sukoon hai
+    jo duniya ki kisi cheez me nahi.
+    Dooriyan sirf faasle badhaati hain, pyaar kabhi kam nahi karti,
+    kyunki mera har khayal, har dua, har sapna tumse hi shuru hota hai.
+    Main tumhara saath sirf aaj ke liye nahi chahta,
+    balki har kal, har saans, har zindagi ke liye chahta hoon.
+    Tum meri aadat nahi, meri zarurat ho… meri kahani ka sabse khoobsurat hissa ho.
+  </p>
+</section>
+<!-- SLIDE 3 -->
+<section class="slide">
+  <h2> Love Note 💌</h2>
+  <p>
+    Neha, loving you feels like coming home after a long journey.
+    In your smile, I find my peace; in your voice, I find my strength.
+    Even across miles, my heart beats only for you,
+    choosing you in every moment, in every lifetime.
+    I may not promise perfection, but I promise loyalty, warmth, and a love
+    that grows deeper with every sunrise and every Christmas we share.
+  </p>
+</section>
+<!-- SLIDE 4 -->
+<section class="slide">
+  <h2> Naughty Note Babe 💌 😁</h2>
+  <p>
+  Christmas ki raat hai, twinkle lights jaisi teri smile hai,
+Meri life ka Santa, sabse naughty aur sweetest style.
+Gifts aur chocolates ki baatein chhodo,
+Meri baahon ka magic hi sabse bada treasure hai, thoda hold karlo.
 
-  // SLIDES
-  const slides = document.querySelectorAll(".slide");
+Snow ki tarah soft hai tu, aur meri heart beat ko melt kar de,
+Har hug aur kiss mein bas tu aur main, duniya ka tension forget kar de.
+Meri naughty little secret, tu meri Christmas delight hai,
+Dil ke sleigh mein sirf tera naam hai, aur raat bhar ka ek cute fight hai.
+
+Jingle bells bajte rahein, par sirf humari laughter ho loud,
+Tu meri naughty fantasy, aur main tera thoda shy crowd.
+Merry Christmas meri jaan, tu meri ultimate naughty surprise hai,
+Tere saath har moment sweet aur thoda cheeky, dono ka combo meri paradise hai!
+  </p>
+</section>
+<section class="slide">
+  <h2>My Favorite Memories 📸</h2>
+  <div class="photos">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+  </div>
+</section><!-- SLIDE 4 --><section class="slide">
+  <div id="typeText"></div>
+</section><script>
+  const slides = document.querySelectorAll('.slide');
   let current = 0;
-  let autoTimer = null;
 
   function showSlide(i){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[i].classList.add("active");
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
 
-    // last slide typewriter
     if(i === slides.length - 1){
-      typeWriter("I Love You Neha ❤️");
+      typeWriter('Merry Christmas baby, love you so much 😘');
     }
   }
 
-  function nextSlide(){
-    current++;
-    if(current < slides.length){
-      showSlide(current);
+  function autoPlay(){
+    setInterval(() => {
+      current++;
+      if(current < slides.length){
+        showSlide(current);
+      }
+    }, 4500);
+  }
+
+  function checkPassword(){
+    const p = document.getElementById('passwordInput').value;
+    if(p === 'NEHA25'){
+      document.getElementById('lockScreen').style.display = 'none';
+      showSlide(0);
+      autoPlay();
     } else {
-      clearInterval(autoTimer);
+      document.getElementById('error').innerText = 'Wrong password 💔';
     }
   }
 
-  function startAutoPlay(){
-    showSlide(0);
-    autoTimer = setInterval(nextSlide, 5000);
-  }
-
-  // HOLD TO PAUSE (ONLY ON SLIDES, NOT PASSWORD)
-  const slideArea = document.body;
-
-  slideArea.addEventListener("touchstart", () => {
-    if(autoTimer) clearInterval(autoTimer);
-  });
-
-  slideArea.addEventListener("touchend", () => {
-    if(!document.getElementById("lockScreen").style.display){
-      autoTimer = setInterval(nextSlide, 5000);
-    }
-  });
-
-  // TYPEWRITER
   function typeWriter(text){
-    const el = document.getElementById("typeText");
-    if(!el) return;
-    el.innerHTML = "";
+    const el = document.getElementById('typeText');
     let i = 0;
-    const speed = 120;
+    el.innerHTML = '';
     const t = setInterval(() => {
       if(i < text.length){
         el.innerHTML += text.charAt(i);
@@ -245,8 +245,129 @@
       } else {
         clearInterval(t);
       }
+    }, 90);
+        i++;
+      } else {
+        clearInterval(t);
+      }
+    }, 120);
+  }
+  // ❄️ SNOWFALL EFFECT
+  const canvas = document.getElementById('snow');
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  const flakes = Array.from({length:80}, () => ({
+    x: Math.random()*w,
+    y: Math.random()*h,
+    r: Math.random()*3 + 1,
+    d: Math.random() + 0.5
+  }));
+
+  function drawSnow(){
+    ctx.clearRect(0,0,w,h);
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.beginPath();
+    flakes.forEach(f => {
+      ctx.moveTo(f.x, f.y);
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);
+    });
+    ctx.fill();
+    moveSnow();
+  }
+
+  let angle = 0;
+  function moveSnow(){
+    angle += 0.01;
+    flakes.forEach(f => {
+      f.y += Math.pow(f.d,2) + 1;
+      f.x += Math.sin(angle) * 0.5;
+      if(f.y > h){
+        f.y = 0;
+        f.x = Math.random()*w;
+      }
+    });
+  }
+
+  setInterval(drawSnow, 30);
+
+  window.addEventListener('resize', () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+</script><!-- AUDIO --><audio id="bgMusic" src="love-song.mp3" loop></audio>
+
+<div id="audioControl" style="position:fixed;top:15px;right:15px;z-index:5;">
+  <button onclick="toggleMusic()" style="padding:10px 15px;border-radius:20px;border:none;background:rgba(0,0,0,0.4);color:white;">🎵 Play / Pause</button>
+</div><script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  let timer = null;
+  let isPaused = false;
+
+  function showSlide(i){
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+
+    if(i === slides.length - 1){
+      typeWriter('Merry Christmas Baby, Love You So Much 😘❤️');
+    }
+  }
+
+  function startSlides(){
+    timer = setInterval(() => {
+      if(!isPaused){
+        current++;
+        if(current < slides.length){
+          showSlide(current);
+        } else {
+          clearInterval(timer);
+        }
+      }
+    }, 4500);
+  }
+
+  // TAP & HOLD PAUSE
+  document.addEventListener('touchstart', () => { isPaused = true; });
+  document.addEventListener('touchend', () => { isPaused = false; });
+  document.addEventListener('mousedown', () => { isPaused = true; });
+  document.addEventListener('mouseup', () => { isPaused = false; });
+
+  // PASSWORD
+  function checkPassword(){
+    const p = document.getElementById('passwordInput').value;
+    if(p === 'NEHA0912'){
+      document.getElementById('lockScreen').style.display = 'none';
+      showSlide(0);
+      startSlides();
+    } else {
+      document.getElementById('error').innerText = 'Wrong password 💔';
+    }
+  }
+
+  // AUDIO
+  const music = document.getElementById('bgMusic');
+  function toggleMusic(){
+    if(music.paused){ music.play(); }
+    else{ music.pause(); }
+  }
+
+  // TYPEWRITER FUNCTION (FIX)
+  function typeWriter(text){
+    const el = document.getElementById('typeText');
+    if(!el) return;
+    el.innerHTML = "";
+    let i = 0;
+    const speed = 90;
+    const timer = setInterval(() => {
+      if(i < text.length){
+        el.innerHTML += text.charAt(i);
+        i++;
+      } else {
+        clearInterval(timer);
+      }
     }, speed);
   }
-</script>
-</body>
+</script></body>
 </html>
