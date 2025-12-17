@@ -141,14 +141,32 @@
   </p>
   <button class="next" onclick="nextSlide()">Next ➜</button>
 </section><!-- SLIDE 2 --><section class="slide">
-  <h2>For My Love ❤️</h2>
+  <h2>Meri Shayari, Sirf Tumhare Liye ❤️</h2>
   <p>
-    Neha, tum meri zindagi ka wo hissa ho jahan har kahani khud-ba-khud khoobsurat ban jaati hai.
-    Tumhari ek muskurahat mere saare gham chura leti hai, aur tumhari khamoshi bhi mujhe sukoon de jaati hai.
-    Agar poori duniya bhi mujhse chhin jaaye, par tum saath raho — toh mujhe kuch aur chahiye hi nahi.
+    Neha, tum meri zindagi ka wo ehsaas ho jise lafzon me poora bayan karna mumkin hi nahi.
+    Tumhari ek muskurahat meri har thakaan mita deti hai, tumhari awaaz mere dil ko sukoon de jaati hai.
+    Door hoke bhi tum mere sabse kareeb ho, kyunki mera har khayal, har dua, har khwab tum se hi shuru hota hai.
+    Agar kabhi main kam bol paata hoon, toh yaad rakhna meri khamoshi me bhi sirf tum hi basi hoti ho.
+    Tum meri aadat nahi, meri zarurat ho… meri kahani ka sabse khoobsurat hissa ho.
+    Is Christmas par bas itna kehna hai — chahe duniya badal jaaye, par main tumhe kabhi nahi badalne dunga.
   </p>
   <button class="next" onclick="nextSlide()">Next ➜</button>
 </section><!-- SLIDE 3 --><section class="slide">
+  <h2>Merry Christmas My Love 🎄</h2>
+  <p>
+    Merry Christmas Neha ❤️
+    On this beautiful Christmas, I want you to know that you are the warmest miracle of my life.
+    Every moment with you feels like a blessing, every thought of you feels like home.
+    Distance may separate our hands, but our hearts beat in the same rhythm, dreaming of the same forever.
+    I don’t promise you a perfect world, but I promise you a heart that will always choose you,
+    in every season, every silence, every Christmas yet to come.
+    Thank you for being my love, my strength, my smile.
+    Merry Christmas, today and always.
+  </p>
+  <img src="photo1.jpg" />
+  <img src="photo2.jpg" />
+  <button class="next" onclick="nextSlide()">Finish ❤️</button>
+</section><section class="slide">
   <h2>Forever Us 💫</h2>
   <p>
     I don’t promise you a perfect life, but I promise you a loyal heart.
@@ -172,7 +190,7 @@
 
   function checkPassword(){
     const p = document.getElementById('passwordInput').value;
-    if(p === 'NEHA25'){
+    if(p === 'NEHA091205'){
       document.getElementById('lockScreen').style.display = 'none';
     } else {
       document.getElementById('error').innerText = 'Wrong password 💔';
@@ -186,70 +204,5 @@
   function pauseMusic(){
     document.getElementById('song').pause();
   }
-</script></body>
-</html></div><div class="slide active">
-  <h1 class="love">Hey Neha ❤️</h1>
-  <p>Distance may keep us apart, but love never learned how to stay away.</p>
-</div><div class="slide">
-  <h1>Our Moments 📸</h1>
-  <img src="photo1.jpg"><img src="photo2.jpg">
-  <p>Every memory with you feels like a promise of forever.</p>
-</div><div class="slide">
-  <h1>Hinglish Shayari 💌</h1>
-  <p>
-Tum door ho toh kya hua,<br>
-mera har khayal tumse shuru hota hai aur tumpe hi khatam hota hai.<br><br>
-Raat ke sannate me jab sab so jaate hain,<br>
-meri tanhaai bhi tumhara naam leti hai ❤️<br><br>
-Tum meri aadat nahi, meri zarurat ho,<br>
-wo ehsaas ho jo lafzon me kabhi poora nahi hota.<br><br>
-Iss duniya me agar kisi cheez pe poora bharosa hai,<br>
-toh wo sirf tum ho… Neha 💖
-  </p>
-</div><div class="slide">
-  <h1>English Shayari ❤️</h1>
-  <p>
-You are not just someone I love,<br>
-you are the feeling I carry in every breath I take.<br><br>
-Even when miles stand between us,<br>
-my heart never learned the meaning of distance.<br><br>
-I don’t dream of perfect days,<br>
-I dream of ordinary days with you in them.<br><br>
-If forever ever asked me where to stay,<br>
-I would choose your heart — every single time.
-  </p>
-</div><div class="slide">
-  <h1>Final Promise 💖</h1>
-  <p>
-Neha, this distance is temporary…<br>
-but what I feel for you is permanent.<br><br>
-One day, no screens, no miles — just us.<br>
-Until then, hold my heart… it’s already yours ❤️
-  </p>
-</div><div class="nav" id="nav" style="display:none">
-  <button onclick="nextSlide()">➜</button>
-</div><script>
-let slides=document.querySelectorAll('.slide');
-let current=0;
-
-function nextSlide(){if(current<slides.length-1){slides[current].classList.remove('active');current++;slides[current].classList.add('active');}}
-function playMusic(){music.play();}
-function pauseMusic(){music.pause();}
-
-function unlock(){
-  let p=document.getElementById('pass').value;
-  if(p==='NEHA25'){
-    document.getElementById('lock').style.display='none';
-    document.getElementById('controls').style.display='block';
-    document.getElementById('nav').style.display='block';
-  }else{alert('Wrong password ❤️');}
-}
-
-for(let i=0;i<30;i++){
-  let s=document.createElement('div');s.className='snowflake';s.innerHTML='❄';
-  s.style.left=Math.random()*100+'vw';s.style.fontSize=10+Math.random()*20+'px';
-  s.style.opacity=Math.random();s.style.animationDuration=3+Math.random()*5+'s';
-  document.body.appendChild(s);
-}
 </script></body>
 </html>
