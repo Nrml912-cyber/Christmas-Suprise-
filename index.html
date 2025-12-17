@@ -179,30 +179,85 @@
 </section><script>
   const slides = document.querySelectorAll('.slide');
   let current = 0;
+  let interval;
+
+  function showSlide(index){
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
 
   function nextSlide(){
-    slides[current].classList.remove('active');
-    current++;
-    if(current < slides.length){
-      slides[current].classList.add('active');
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function startAutoPlay(){
+    interval = setInterval(nextSlide, 5000); // 5 seconds
+  }
+
+  function stopAutoPlay(){
+    clearInterval(interval);
+  }
+
+  // Start autoplay
+  startAutoPlay();
+
+  // Tap & hold to pause (mobile friendly)
+  document.addEventListener('touchstart', stopAutoPlay);
+  document.addEventListener('touchend', startAutoPlay);
+  document.addEventListener('mousedown', stopAutoPlay);
+  document.addEventListener('mouseup', startAutoPlay);
+</script><section class="slide final">
+  <h1 id="typeText"></h1>
+</section><script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  let interval;
+
+  function showSlide(index){
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+
+    // Typewriter on last slide
+    if(index === slides.length - 1){
+      typeWriter("I Love You Neha ❤️", 'typeText');
     }
   }
 
-  function checkPassword(){
-    const p = document.getElementById('passwordInput').value;
-    if(p === 'NEHA091205'){
-      document.getElementById('lockScreen').style.display = 'none';
-    } else {
-      document.getElementById('error').innerText = 'Wrong password 💔';
-    }
+  function nextSlide(){
+    current = (current + 1) % slides.length;
+    showSlide(current);
   }
 
-  function playMusic(){
-    document.getElementById('song').play();
+  function startAutoPlay(){
+    interval = setInterval(nextSlide, 5000);
   }
 
-  function pauseMusic(){
-    document.getElementById('song').pause();
+  function stopAutoPlay(){
+    clearInterval(interval);
   }
+
+  function typeWriter(text, id){
+    const el = document.getElementById(id);
+    el.innerHTML = "";
+    let i = 0;
+    const speed = 120;
+    const timer = setInterval(() => {
+      if(i < text.length){
+        el.innerHTML += text.charAt(i);
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, speed);
+  }
+
+  showSlide(0);
+  startAutoPlay();
+
+  document.addEventListener('touchstart', stopAutoPlay);
+  document.addEventListener('touchend', startAutoPlay);
+  document.addEventListener('mousedown', stopAutoPlay);
+  document.addEventListener('mouseup', startAutoPlay);
 </script></body>
 </html>
