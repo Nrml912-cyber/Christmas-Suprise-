@@ -2,82 +2,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merry Christmas My Love ❤️</title>
+<title>Merry Christmas Neha ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;} body{ background:linear-gradient(120deg,#0f2027,#203a43,#2c5364); color:white; overflow-x:hidden; } section{ min-height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; padding:20px; text-align:center; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;overflow:hidden;
+}/* Password Screen */ #lock{ position:fixed;top:0;left:0;width:100%;height:100vh; display:flex;justify-content:center;align-items:center; flex-direction:column;text-align:center; background:linear-gradient(135deg,#000428,#004e92); z-index:9999; } #lock input{ padding:12px 18px;border-radius:25px;border:none; margin-top:15px;font-size:16px;text-align:center; } #lock button{ margin-top:15px;padding:10px 26px; border:none;border-radius:25px; background:#ff4d6d;color:#fff;font-size:16px; }
 
-h1{ font-size:2.5rem; margin-bottom:15px; }
+.slide{ position:absolute;top:0;left:0;width:100%;height:100vh; display:flex;justify-content:center;align-items:center; flex-direction:column;text-align:center;padding:25px; opacity:0;transform:scale(.95);transition:1s; } .slide.active{opacity:1;transform:scale(1);}
 
-p{ font-size:1.1rem; max-width:600px; }
+h1{font-size:2.6rem;margin-bottom:15px;} .love{font-family:'Great Vibes',cursive;font-size:3.2rem;color:#ffb3c6;} p{font-size:1.1rem;max-width:760px;line-height:1.7;}
 
-.btn{ margin-top:30px; padding:12px 30px; background:#ff4d6d; border:none; color:white; font-size:1.1rem; border-radius:30px; cursor:pointer; box-shadow:0 10px 30px rgba(0,0,0,0.3); }
+img{width:260px;height:260px;object-fit:cover;border-radius:22px;margin:10px;box-shadow:0 15px 35px rgba(0,0,0,.4);}
 
-.love{ font-family:'Great Vibes',cursive; font-size:3rem; color:#ffb3c6; }
+.controls{position:fixed;top:15px;right:15px;z-index:10;} .controls button{background:#ff4d6d;border:none;color:white;padding:10px 16px;border-radius:30px;margin-left:8px;cursor:pointer;}
 
-.slide{ opacity:0; transform:translateY(40px); transition:1s; }
+.nav{position:fixed;bottom:20px;right:20px;z-index:10;} .nav button{background:#ffffff22;border:1px solid #fff;color:white;padding:12px 18px;border-radius:50%;font-size:18px;cursor:pointer;}
 
-.slide.active{ opacity:1; transform:translateY(0); }
-
-img{ width:250px; height:250px; object-fit:cover; border-radius:20px; margin:15px; box-shadow:0 10px 30px rgba(0,0,0,0.4); }
-
-/* Snow */ .snowflake{ position:fixed; top:-10px; color:white; user-select:none; animation:fall linear infinite; } @keyframes fall{ to{transform:translateY(110vh);} } </style>
+.snowflake{position:fixed;top:-10px;color:white;animation:fall linear infinite;} @keyframes fall{to{transform:translateY(110vh);}} </style>
 
 </head>
-<body>
-<<audio id="music" src="love-song.mp3"></audio>
+<body><!-- PASSWORD LOCK --><div id="lock">
+  <h1 class="love">For Neha ❤️</h1>
+  <p>Enter the secret word to unlock my heart</p>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="unlock()">Unlock 🔓</button>
+</div><audio id="music" src="love-song.mp3"></audio>
 
-<section class="slide">
+<div class="controls" style="display:none" id="controls">
+  <button onclick="playMusic()">▶ Play</button>
+  <button onclick="pauseMusic()">⏸ Pause</button>
+</div><div class="slide active">
   <h1 class="love">Hey Neha ❤️</h1>
-  <p>Christmas feels incomplete without you here… but love has no distance.</p>
-</section><section class="slide">
-  <h1>Our Memories 📸</h1>
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-  <p>Every picture holds a thousand emotions… and one promise — forever.</p>
-</section><section class="slide">
-  <h1>For You 💌</h1>
+  <p>Distance may keep us apart, but love never learned how to stay away.</p>
+</div><div class="slide">
+  <h1>Our Moments 📸</h1>
+  <img src="photo1.jpg"><img src="photo2.jpg">
+  <p>Every memory with you feels like a promise of forever.</p>
+</div><div class="slide">
+  <h1>Hinglish Shayari 💌</h1>
   <p>
-    Miles may keep us apart,<br>
-    But never heart from heart.<br><br>
-    Tum door ho kar bhi itni paas ho,<br>
-    Jaise har dua ka tum hi ehsaas ho ❤️
+Tum door ho toh kya hua,<br>
+mera har khayal tumse shuru hota hai aur tumpe hi khatam hota hai.<br><br>
+Raat ke sannate me jab sab so jaate hain,<br>
+meri tanhaai bhi tumhara naam leti hai ❤️<br><br>
+Tum meri aadat nahi, meri zarurat ho,<br>
+wo ehsaas ho jo lafzon me kabhi poora nahi hota.<br><br>
+Iss duniya me agar kisi cheez pe poora bharosa hai,<br>
+toh wo sirf tum ho… Neha 💖
   </p>
-</section><section class="slide">
-  <h1>Merry Christmas 🎄</h1>
-  <p class="love">Neha, you are my favorite gift… today and always.</p>
-  <button class="btn" onclick="playMusic()">Tap to Unlock Surprise 🎁</button>
-</section><section class="slide">
-  <h1>Final Surprise 💖</h1>
+</div><div class="slide">
+  <h1>English Shayari ❤️</h1>
   <p>
-    Neha, distance sirf milne se rokti hai,<br>
-    pyaar karne se nahi…<br><br>
-    Iss Christmas main bas ek hi wish hai —<br>
-    tum mere paas ho, aur main tumhara ❤️
+You are not just someone I love,<br>
+you are the feeling I carry in every breath I take.<br><br>
+Even when miles stand between us,<br>
+my heart never learned the meaning of distance.<br><br>
+I don’t dream of perfect days,<br>
+I dream of ordinary days with you in them.<br><br>
+If forever ever asked me where to stay,<br>
+I would choose your heart — every single time.
   </p>
-</section><script>
-const slides=document.querySelectorAll('.slide');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('active');}
-  });
-},{threshold:0.3});
-slides.forEach(slide=>observer.observe(slide));
+</div><div class="slide">
+  <h1>Final Promise 💖</h1>
+  <p>
+Neha, this distance is temporary…<br>
+but what I feel for you is permanent.<br><br>
+One day, no screens, no miles — just us.<br>
+Until then, hold my heart… it’s already yours ❤️
+  </p>
+</div><div class="nav" id="nav" style="display:none">
+  <button onclick="nextSlide()">➜</button>
+</div><script>
+let slides=document.querySelectorAll('.slide');
+let current=0;
 
-function playMusic(){
-  document.getElementById('music').play();
-  alert('Merry Christmas My Love ❤️');
+function nextSlide(){if(current<slides.length-1){slides[current].classList.remove('active');current++;slides[current].classList.add('active');}}
+function playMusic(){music.play();}
+function pauseMusic(){music.pause();}
+
+function unlock(){
+  let p=document.getElementById('pass').value;
+  if(p==='NEHA25'){
+    document.getElementById('lock').style.display='none';
+    document.getElementById('controls').style.display='block';
+    document.getElementById('nav').style.display='block';
+  }else{alert('Wrong password ❤️');}
 }
 
-// Snow Generator
-for(let i=0;i<40;i++){
-  let snow=document.createElement('div');
-  snow.className='snowflake';
-  snow.innerHTML='❄';
-  snow.style.left=Math.random()*100+'vw';
-  snow.style.animationDuration=3+Math.random()*5+'s';
-  snow.style.opacity=Math.random();
-  snow.style.fontSize=10+Math.random()*20+'px';
-  document.body.appendChild(snow);
+for(let i=0;i<30;i++){
+  let s=document.createElement('div');s.className='snowflake';s.innerHTML='❄';
+  s.style.left=Math.random()*100+'vw';s.style.fontSize=10+Math.random()*20+'px';
+  s.style.opacity=Math.random();s.style.animationDuration=3+Math.random()*5+'s';
+  document.body.appendChild(s);
 }
 </script></body>
-  </html>
+</html>
