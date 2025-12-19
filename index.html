@@ -1,166 +1,256 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Neha ❤️</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Neha ❤️</title>  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  <style>
+    html, body{
+      width:100%;
+      height:100%;
+      margin:0;
+      padding:0;
+      overflow:hidden;
+      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      color:white;
+      font-family:'Poppins',sans-serif;
+    }
 
-body{
-  background:radial-gradient(circle at top,#ff9a9e,#a18cd1,#141e30);
-  color:#fff;overflow:hidden
-}
+    /* LOCK SCREEN */
+    #lockScreen{
+      position:fixed;
+      inset:0;
+      background:linear-gradient(135deg,#000428,#004e92);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      z-index:20;
+      text-align:center;
+    }
 
-/* LOCK */
-#lockScreen{
-  position:fixed;inset:0;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
-  z-index:10;text-align:center
-}
-#lockScreen h1{font-family:'Great Vibes';font-size:48px;margin-bottom:10px}
-#lockScreen input{
-  padding:12px;width:220px;border-radius:14px;border:none;
-  text-align:center;font-size:16px;margin-top:15px
-}
-#lockScreen button{
-  margin-top:15px;padding:10px 35px;border:none;border-radius:30px;
-  background:#ff4d6d;color:white;font-size:16px
-}
+    #lockScreen h1{
+      font-family:'Great Vibes',cursive;
+      font-size:48px;
+      text-shadow:0 0 15px #ffb3d9;
+    }
 
-/* SLIDES */
-.slide{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;text-align:center;
-  padding:25px;opacity:0;transition:opacity 1.2s ease;z-index:2
-}
-.slide.active{opacity:1}
+    #lockScreen input{
+      margin-top:15px;
+      padding:12px;
+      width:220px;
+      border-radius:15px;
+      border:none;
+      text-align:center;
+      font-size:16px;
+    }
 
-h2{font-family:'Great Vibes';font-size:44px;margin-bottom:18px;text-shadow:0 0 15px rgba(255,255,255,.6)}
-p{max-width:720px;line-height:1.9;font-size:16px}
+    #lockScreen button{
+      margin-top:15px;
+      padding:10px 35px;
+      border-radius:30px;
+      border:none;
+      background:#ff4d6d;
+      color:white;
+      font-size:16px;
+    }
 
-.photos{display:flex;gap:15px;margin-top:20px;flex-wrap:wrap;justify-content:center}
-.photos img{
-  width:170px;height:220px;object-fit:cover;border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-  opacity:0;transform:scale(.9) translateY(20px);
-  transition:opacity 1.2s ease, transform 1.2s ease, box-shadow .6s ease;
-  position:relative
-}
-.slide.active .photos img{
-  opacity:1;transform:scale(1) translateY(0)
-}
-.slide.active .photos img:nth-child(1){transition-delay:.3s}
-.slide.active .photos img:nth-child(2){transition-delay:.6s}
+    /* SLIDES */
+    .slide{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:25px;
+      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      opacity:0;
+      transition:opacity 1.3s ease;
+      z-index:5;
+    }
 
-/* GLOW + HEART ON HOVER */
-.photos img:hover{
-  box-shadow:0 0 25px rgba(255,182,193,.9),0 0 45px rgba(255,105,180,.6);
-}
-.photos img::after{
-  content:'❤️';
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(0);
-  font-size:38px;opacity:0;
-  transition:all .5s ease
-}
-.photos img:hover::after{
-  transform:translate(-50%,-50%) scale(1.2);
-  opacity:1
-}
-.slide.active .photos img{
-  opacity:1;transform:scale(1) translateY(0)
-}
-.slide.active .photos img:nth-child(1){transition-delay:.3s}
-.slide.active .photos img:nth-child(2){transition-delay:.6s}
+    .slide.active{ opacity:1; }
 
-/* TYPEWRITER */
-#typeText{
-  font-family:'Great Vibes';font-size:48px;line-height:1.5;
-  text-shadow:0 0 20px rgba(255,255,255,.8);
-}
-#cursor{
-  display:inline-block;width:3px;height:1.1em;background:#fff;
-  margin-left:6px;animation:blink 1s infinite
-}
-@keyframes blink{50%{opacity:0}}
+    h2{
+      font-family:'Great Vibes',cursive;
+      font-size:42px;
+      text-shadow:0 0 15px rgba(255,255,255,0.7);
+      margin-bottom:18px;
+    }
 
-/* AUDIO */
-#audioBtn{
-  position:fixed;top:15px;right:15px;z-index:5;
-  padding:10px 16px;border:none;border-radius:25px;
-  background:rgba(0,0,0,.4);color:white
-}
+    p{
+      max-width:750px;
+      font-size:16px;
+      line-height:1.8;
+    }
 
-/* SNOW */
-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
-</style></head>
+    /* PHOTOS */
+    .photos{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+      margin-top:20px;
+      max-width:420px;
+    }
+
+    .photos img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      border-radius:20px;
+      box-shadow:0 12px 35px rgba(0,0,0,.55);
+      opacity:0;
+      transform:translateY(35px) scale(.9);
+      transition:opacity 1.1s ease, transform 1.1s ease, box-shadow .6s ease;
+      filter:brightness(.95) saturate(1.15);
+    }
+
+    .slide.active .photos img{
+      opacity:1;
+      transform:translateY(0) scale(1);
+      filter:brightness(1.05) saturate(1.35);
+    }
+
+    .slide.active .photos img:nth-child(1){transition-delay:.2s}
+    .slide.active .photos img:nth-child(2){transition-delay:.4s}
+    .slide.active .photos img:nth-child(3){transition-delay:.6s}
+    .slide.active .photos img:nth-child(4){transition-delay:.8s}
+    .slide.active .photos img:nth-child(5){transition-delay:1s}
+    .slide.active .photos img:nth-child(6){transition-delay:1.2s}
+      to{opacity:1; transform:scale(1)}
+    }
+
+    /* TYPEWRITER */
+    #typeText{
+      font-family:'Great Vibes',cursive;
+      font-size:46px;
+      max-width:90%;
+      text-shadow:0 0 20px #ffb3d9;
+      border-right:3px solid white;
+      padding-right:5px;
+      animation:blink 1s infinite;
+    }
+
+    @keyframes blink{ 50%{border-color:transparent;} }
+
+    /* SNOW */
+    #snow{
+      position:fixed;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+    }
+
+    /* AUDIO BUTTON */
+    #audioControl{
+      position:fixed;
+      top:15px;
+      right:15px;
+      z-index:10;
+    }
+
+    #audioControl button{
+      padding:10px 16px;
+      border:none;
+      border-radius:25px;
+      background:rgba(0,0,0,0.4);
+      color:white;
+      font-size:14px;
+    }
+  </style></head>
 <body><canvas id="snow"></canvas>
 
-<div id="lockScreen">
+<!-- LOCK --><div id="lockScreen">
   <h1>For Neha ❤️</h1>
   <p>Enter the secret password</p>
   <input id="passwordInput" type="password" placeholder="Password">
   <button onclick="unlock()">Open 💖</button>
   <p id="error"></p>
 </div><section class="slide active">
-  <h2>Merry Christmas My Love ❤️🎄</h2>
-  <p>Every time I see you smile, it feels like Christmas in my heart. You make my ordinary days special and my special days unforgettable. Having you in my life is the sweetest blessing I could ever ask for. Your laughter is my favorite sound, your presence is my comfort, and your love is my safest place.This Christmas, I wish to create countless memories with you — sharing silly laughs, warm hugs, and quiet moments where words aren’t needed. Thank you for being my happiness, my peace, and my reason to smile. No matter where life takes us, I hope we always celebrate love together, just like this. I’m so grateful for you today and always. Merry Christmas, my beautiful girl 🎅✨❤️.</p>
+  <h2>Merry Christmas Neha 🎄</h2>
+  <p>Distance may keep us apart, but my heart celebrates Christmas with you every moment.</p>
 </section><section class="slide">
-  <h2> Shayari Baby ❤️</h2>
-  <p>
-    Jab tum saamne hoti ho na, Toh lafz sharma jaate hain aur dil bolne lagta hai. Tumhari ek muskurahat pe... Mera poora din pyaara ho jaata hai. Tumhari baaton mein sukoon hai, Tumhari aankhon mein mera ghar. Tum saath ho toh lagta hai Maine jeet li hai zindagi ka har safar. Main roz tumse pyaar karta hoon, Bas tareekh badal jaati hai. Tum meri woh aadat ho...... Jo har saans ke saath aur gehri hoti jaati hai....... Agar poochho kya ho tum mere liye… Toh jawaab sirf itna hai jaan...... Tum meri subah, meri raat, Aur meri har kahani ka sabse khoobsurat ehsaas ho ❤️🥰
-  </p>
+  <h2>Shayari ❤️</h2>
+  <p>Neha, tum meri zindagi ka wo ehsaas ho jo lafzon se bayan nahi hota,
+  door hoke bhi tum meri har dua, har khwab me saath hoti ho.</p>
 </section><section class="slide">
-  <h2>Naughty Love Note 💌</h2>
-  <p>
-    Christmas ki raat hai, twinkle lights jaisi teri smile,
-Meri life ka Santa, sabse naughty aur sweetest style.
-Gifts aur chocolates ki baatein chhodo,
-Meri baahon ka magic hi sabse bada treasure hai, thoda hold karlo.
-
-Snow ki tarah soft hai tu, aur meri heart beat ko melt kar de,
-Har hug aur kiss mein bas tu aur main, duniya ka tension forget kar de.
-Meri naughty little secret, tu meri Christmas delight hai,
-Dil ke sleigh mein sirf tera naam hai, aur raat bhar ka ek cute fight hai.
-
-Jingle bells bajte rahein, par sirf humari laughter ho loud,
-Tu meri naughty fantasy, aur main tera thoda shy crowd.
-Merry Christmas meri jaan, tu meri ultimate naughty surprise hai,
-Tere saath har moment sweet aur thoda cheeky, dono ka combo meri paradise hai.... 😚❤️
-  </p>
+  <h2>Love Note 💌</h2>
+  <p>Loving you feels like magic, warmth, and home all at once.
+  Every Christmas, my heart chooses you again.</p>
 </section><section class="slide">
   <h2>Memories 📸</h2>
   <div class="photos">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-  </div>
+  <img src="photo1.jpg" alt="Memory 1">
+  <img src="photo2.jpg" alt="Memory 2">
+  <img src="photo3.jpg" alt="Memory 3">
+  <img src="photo4.jpg" alt="Memory 4">
+  <img src="photo5.jpg" alt="Memory 5">
+  <img src="photo6.jpg" alt="Memory 6">
+</div>
 </section><section class="slide">
-  <div id="typeText"></div><span id="cursor"></span>
-</section><button id="audioBtn" onclick="toggleMusic()">🎵 Play / Pause</button> <audio id="music" src="love-song.mp3" loop></audio>
+  <div id="typeText"></div>
+</section><audio id="bgMusic" src="love-song.mp3" loop></audio>
 
-<script>
-const slides=document.querySelectorAll('.slide');
-let index=0,paused=false,interval;
+<div id="audioControl"><button onclick="toggleMusic()">🎵 Play / Pause</button></div><script>
+  const slides=document.querySelectorAll('.slide');
+  let current=0, paused=false;
 
-function show(i){slides.forEach(s=>s.classList.remove('active'));slides[i].classList.add('active');if(i===slides.length-1)typeText("Merry Christmas baby, love you so much 😘")}
+  function showSlide(i){
+    slides.forEach(s=>s.classList.remove('active'));
+    slides[i].classList.add('active');
+    if(i===slides.length-1) typeWriter('Merry Christmas baby, love you so much 😘');
+  }
 
-function start(){interval=setInterval(()=>{if(!paused&&index<slides.length-1){index++;show(index)}},4500)}
+  function start(){
+    setInterval(()=>{ if(!paused && current<slides.length-1){ current++; showSlide(current); }},4500);
+  }
 
-function unlock(){if(passwordInput.value==='NEHA0912'){lockScreen.style.display='none';music.play();start()}else error.innerText='Wrong password 💔'}
+  function unlock(){
+    if(passwordInput.value==='NEHA25'){
+      lockScreen.style.display='none';
+      start();
+      bgMusic.play();
+    } else error.innerText='Wrong password 💔';
+  }
 
-function typeText(text){const el=document.getElementById('typeText');el.innerHTML='';let i=0;const t=setInterval(()=>{el.innerHTML+=text.charAt(i);i++;if(i>=text.length)clearInterval(t)},90)}
+  document.addEventListener('touchstart',()=>paused=true);
+  document.addEventListener('touchend',()=>paused=false);
 
-function toggleMusic(){music.paused?music.play():music.pause()}
+  function toggleMusic(){ bgMusic.paused?bgMusic.play():bgMusic.pause(); }
 
-addEventListener('touchstart',()=>paused=true);addEventListener('touchend',()=>paused=false);
-addEventListener('mousedown',()=>paused=true);addEventListener('mouseup',()=>paused=false);
+  function typeWriter(text){
+    const el=document.getElementById('typeText');
+    let i=0; el.innerHTML='';
+    const t=setInterval(()=>{ if(i<text.length){ el.innerHTML+=text.charAt(i++);} else clearInterval(t);},90);
+  }
 
-// SNOW
-const c=document.getElementById('snow'),ctx=c.getContext('2d');
-function resize(){c.width=innerWidth;c.height=innerHeight}
-resize();addEventListener('resize',resize);
-const flakes=Array.from({length:160},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*3+1,s:Math.random()*1+0.5}))
-function snow(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='rgba(255,255,255,.9)';ctx.beginPath();flakes.forEach(f=>{ctx.moveTo(f.x,f.y);ctx.arc(f.x,f.y,f.r,0,Math.PI*2);f.y+=f.s;if(f.y>c.height){f.y=0;f.x=Math.random()*c.width}});ctx.fill();requestAnimationFrame(snow)}
-snow();
+  /* SNOWFALL – PROFESSIONAL */
+  const c=document.getElementById('snow'),ctx=c.getContext('2d');
+  function resize(){c.width=innerWidth;c.height=innerHeight;} resize();
+
+  const flakes=Array.from({length:220},()=>({
+    x:Math.random()*c.width,
+    y:Math.random()*c.height,
+    r:Math.random()*2.5+0.8,
+    s:Math.random()*0.8+0.4,
+    drift:Math.random()*0.6+0.2
+  }));
+
+  function snow(){
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.fillStyle='rgba(255,255,255,0.9)';
+    ctx.beginPath();
+    flakes.forEach(f=>{
+      ctx.moveTo(f.x,f.y);
+      ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+      f.y+=f.s;
+      f.x+=Math.sin(f.y*0.01)*f.drift;
+      if(f.y>c.height){f.y=-5;f.x=Math.random()*c.width;}
+    });
+    ctx.fill();
+    requestAnimationFrame(snow);
+  }
+  snow();
+  window.onresize=resize;
 </script></body>
 </html>
